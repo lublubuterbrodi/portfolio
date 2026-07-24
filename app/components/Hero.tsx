@@ -5,7 +5,7 @@ import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden lg:mt-20">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#DDF4E3] blur-[90px] sm:h-96 sm:w-96 lg:-right-44 lg:-top-32 lg:h-130 lg:w-130 lg:blur-[120px]" />
 
