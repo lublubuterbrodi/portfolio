@@ -56,7 +56,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/cv.pdf"
+                href="/Haiana_Reznichenko_CV.pdf"
                 download
                 className="flex items-center justify-center gap-2 rounded-full border border-[#D9E4DB] bg-white px-6 py-3 transition hover:border-[#4F8F5A]"
               >

@@ -49,7 +49,7 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="/cv.pdf"
+          href="/Haiana_Reznichenko_CV.pdf"
           download
           className="rounded-full bg-[#4F8F5A] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#3F7749] sm:px-5 sm:py-2.5"
         >
