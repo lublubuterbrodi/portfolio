@@ -214,7 +214,7 @@ export default function Contact() {
 
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/in/haiana-r-0898633b4/"
+                href="https://www.linkedin.com/in/haiana-reznichenko-0898633b4/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
