@@ -1,71 +1,273 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa6";
+import { ArrowUpRight, Mail } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-20 sm:py-24 lg:py-32"
+      className="
+        relative
+        overflow-hidden
+        px-5
+        pt-10
+        pb-16
+        sm:px-8
+        sm:pt-12
+        sm:pb-20
+        lg:px-10
+        lg:pt-14
+        lg:pb-20
+      "
     >
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#E8F6EB] blur-[90px] sm:h-96 sm:w-96 lg:h-125 lg:w-125 lg:blur-[120px]" />
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="
+            absolute
+            -bottom-32
+            -right-32
+            h-80
+            w-80
+            rounded-full
+            bg-[#E8F6EB]
+            blur-[100px]
+            lg:h-112
+            lg:w-md
+            lg:blur-[120px]
+          "
+        />
       </div>
 
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+      <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="rounded-[28px] border border-[#E5ECE6] bg-white/80 p-8 text-center backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.05)] sm:rounded-[36px] sm:p-10 lg:rounded-[40px] lg:p-12"
+          transition={{ duration: 0.6 }}
+          className="flex max-w-3xl flex-col items-center"
         >
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-[#252525] sm:mt-5 sm:text-4xl lg:text-5xl">
-            Let&apos;s build something together
+          <h2
+            className="
+              text-3xl
+              font-medium
+              tracking-tight
+              text-[#252525]
+              sm:text-4xl
+              lg:text-5xl
+            "
+          >
+            Let&apos;s Connect
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-neutral-600 sm:mt-6 sm:text-lg sm:leading-8">
-            Whether you have a project, an idea, or just want to say hello,
-            I&apos;d love to hear from you.
+          <p
+            className="
+              mt-4
+              max-w-2xl
+              text-base
+              leading-7
+              text-neutral-600
+              sm:text-lg
+              sm:leading-8
+            "
+          >
+            I&apos;m always interested in new opportunities, interesting
+            projects and collaborations Feel free to reach out, I&apos;d love to
+            hear from you
           </p>
+        </motion.div>
 
+        {/* Contact information */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="
+            mt-8
+            flex
+            w-full
+            flex-col
+            items-center
+            sm:mt-9
+          "
+        >
+          {/* Email */}
           <a
             href="mailto:haianareznichenko@gmail.com"
-            className="mx-auto mt-8 inline-flex w-full max-w-sm items-center justify-center gap-3 rounded-full bg-[#4F8F5A] px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.02] hover:bg-[#42784C] sm:mt-10 sm:w-auto sm:px-8 sm:py-4 sm:text-base lg:mt-12"
+            className="
+              group
+              flex
+              w-fit
+              max-w-full
+              items-center
+              gap-3
+              rounded-2xl
+              border
+              border-[#DDE8DF]
+              bg-white
+              px-4
+              py-3
+              text-left
+              transition
+              duration-300
+
+              hover:border-[#BFDCC6]
+              hover:shadow-[0_8px_25px_rgba(79,143,90,0.08)]
+
+              sm:gap-4
+              sm:px-5
+              sm:py-4
+            "
           >
-            <Mail size={20} />
-            Send an Email
+            {/* Icon */}
+            <div
+              className="
+                flex
+                h-10
+                w-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-xl
+                bg-[#F0F7F2]
+                text-[#4F8F5A]
+
+                sm:h-11
+                sm:w-11
+              "
+            >
+              <Mail size={20} strokeWidth={1.8} />
+            </div>
+
+            {/* Email text */}
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-[#252525]">Email</p>
+
+              <p className="mt-0.5 truncate text-sm text-neutral-600">
+                haianareznichenko@gmail.com
+              </p>
+            </div>
+
+            {/* Arrow */}
+            <ArrowUpRight
+              size={17}
+              className="
+                ml-1
+                shrink-0
+                text-neutral-400
+                transition
+                duration-300
+
+                group-hover:-translate-y-0.5
+                group-hover:translate-x-0.5
+                group-hover:text-[#4F8F5A]
+              "
+            />
           </a>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:mt-10 sm:gap-5">
-            <a
-              href="https://github.com/lublubuterbrodi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-[#DCE8DE] bg-white p-3 transition hover:-translate-y-1 hover:border-[#4F8F5A] hover:text-[#4F8F5A] sm:p-4"
+          {/* Social links */}
+          <div className="mt-6">
+            <p
+              className="
+                text-xs
+                font-medium
+                uppercase
+                tracking-[0.14em]
+                text-neutral-400
+              "
             >
-              <FaGithub size={22} />
-            </a>
+              Find me online
+            </p>
 
-            <a
-              href="https://www.linkedin.com/in/haiana-r-0898633b4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-[#DCE8DE] bg-white p-3 transition hover:-translate-y-1 hover:border-[#4F8F5A] hover:text-[#4F8F5A] sm:p-4"
-            >
-              <FaLinkedin size={22} />
-            </a>
+            <div className="mt-3 flex justify-center gap-3">
+              {/* GitHub */}
+              <a
+                href="https://github.com/lublubuterbrodi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#DCE8DE]
+                  bg-white
+                  text-neutral-600
+                  transition
+                  duration-300
 
-            <a
-              href="https://t.me/bublecco"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-[#DCE8DE] bg-white p-3 transition hover:-translate-y-1 hover:border-[#4F8F5A] hover:text-[#4F8F5A] sm:p-4"
-            >
-              <FaTelegram size={22} />
-            </a>
+                  hover:-translate-y-1
+                  hover:border-[#4F8F5A]
+                  hover:text-[#4F8F5A]
+                "
+              >
+                <FaGithub size={19} />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/haiana-r-0898633b4/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#DCE8DE]
+                  bg-white
+                  text-neutral-600
+                  transition
+                  duration-300
+
+                  hover:-translate-y-1
+                  hover:border-[#4F8F5A]
+                  hover:text-[#4F8F5A]
+                "
+              >
+                <FaLinkedinIn size={19} />
+              </a>
+
+              {/* Telegram */}
+              <a
+                href="https://t.me/bublecco"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#DCE8DE]
+                  bg-white
+                  text-neutral-600
+                  transition
+                  duration-300
+
+                  hover:-translate-y-1
+                  hover:border-[#4F8F5A]
+                  hover:text-[#4F8F5A]
+                "
+              >
+                <FaTelegramPlane size={19} />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

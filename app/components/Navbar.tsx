@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "About", href: "#hero" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -30,7 +31,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 lg:px-6">
         <Link
-          href="/"
+          href="#hero"
           className="max-w-40 truncate text-xl font-bold tracking-tight text-[#356B45] xs:max-w-[220px] sm:max-w-none sm:text-2xl"
         >
           Reznichenko Haiana

@@ -3,46 +3,149 @@
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/app/data/projects";
 
-import DietTrackerMockup from "./mockups/DietTrackerMockup";
-import TelegramMockup from "./mockups/TelegramMockup";
-import MangaMockup from "./mockups/MangaMockup";
-
 export default function Sections() {
+  const fullstackProjects = projects.filter(
+    (project) => project.category === "fullstack",
+  );
+
+  const frontendProjects = projects.filter(
+    (project) => project.category === "frontend",
+  );
+
+  const featuredProjects = [
+    "Course Progress Tracker",
+    "Diet Tracker",
+    "React Phone Catalog",
+  ];
+
+  const isFeatured = (title: string) => featuredProjects.includes(title);
+
   return (
     <section
       id="projects"
-      className="mx-auto max-w-6xl px-5 py-6 sm:px-6 sm:py-8"
+      className="
+        mx-auto
+        w-full
+        max-w-7xl
+        px-5
+        py-16
+
+        sm:px-8
+        sm:py-20
+
+        lg:px-10
+        lg:py-24
+      "
     >
-      <div className="max-w-4xl">
-        <span className="text-sm font-medium text-[#4F8F5A] sm:text-base">
-          Featured Projects
-        </span>
+      {/* Main heading */}
+      <div className="max-w-3xl">
+        <h2
+          className="
+            text-3xl
+            font-medium
+            tracking-tight
+            text-[#252525]
 
-        <h2 className="mt-4 text-3xl font-bold leading-tight text-[#252525] sm:text-4xl lg:text-5xl">
-          Things I&apos;ve Built
+            sm:text-4xl
+            lg:text-5xl
+          "
+        >
+          Projects
         </h2>
-
-        <p className="mt-5 text-base leading-7 text-neutral-600 sm:mt-6 sm:text-lg sm:leading-8">
-          A collection of projects focused on creating clean, responsive, and
-          user-friendly digital experiences.
-        </p>
       </div>
 
-      <div className="grid mt-12 items-start gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            technologies={project.technologies}
-            githubUrl={project.githubUrl}
-            liveUrl={project.liveUrl}
+      {/* Full-Stack & Backend */}
+      <div className="mt-12 sm:mt-14">
+        {/* Category heading */}
+        <div className="mb-6 flex items-center gap-4">
+          <h3
+            className="
+              shrink-0
+              text-xs
+              font-semibold
+              uppercase
+              tracking-[0.16em]
+              text-[#4F8F5A]
+            "
           >
-            {project.mockup === "diet" && <DietTrackerMockup />}
-            {project.mockup === "telegram" && <TelegramMockup />}
-            {project.mockup === "manga" && <MangaMockup />}
-          </ProjectCard>
-        ))}
+            Full-Stack & Backend
+          </h3>
+
+          <div className="h-px w-full bg-[#E4ECE5]" />
+        </div>
+
+        {/* Projects grid */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            gap-4
+
+            sm:grid-cols-2
+            sm:gap-5
+
+            lg:grid-cols-4
+          "
+        >
+          {fullstackProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              githubUrl={project.githubUrl}
+              liveUrl={project.liveUrl}
+              featured={isFeatured(project.title)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Frontend */}
+      <div className="mt-14 sm:mt-16 lg:mt-20">
+        {/* Category heading */}
+        <div className="mb-6 flex items-center gap-4">
+          <h3
+            className="
+              shrink-0
+              text-xs
+              font-semibold
+              uppercase
+              tracking-[0.16em]
+              text-[#4F8F5A]
+            "
+          >
+            Frontend
+          </h3>
+
+          <div className="h-px w-full bg-[#E4ECE5]" />
+        </div>
+
+        {/* Projects grid */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            gap-4
+
+            sm:grid-cols-2
+            sm:gap-5
+
+            lg:grid-cols-4
+          "
+        >
+          {frontendProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              githubUrl={project.githubUrl}
+              liveUrl={project.liveUrl}
+              featured={isFeatured(project.title)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

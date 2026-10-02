@@ -1,91 +1,358 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden lg:mt-20">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#DDF4E3] blur-[90px] sm:h-96 sm:w-96 lg:-right-44 lg:-top-32 lg:h-130 lg:w-130 lg:blur-[120px]" />
+    <section
+      id="hero"
+      className="
+        relative
+        flex
+        min-h-svh
+        w-full
+        items-center
+        justify-center
+        overflow-hidden
+        bg-white
+      "
+    >
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="
+            absolute
+            -right-24 -top-20
+            h-56 w-56
+            rounded-full
+            bg-[#DDF4E3]
+            blur-[80px]
 
-        <div className="absolute -bottom-28 -left-20 h-56 w-56 rounded-full bg-[#EEF9F1] blur-[80px] sm:h-72 sm:w-72 lg:-bottom-44 lg:-left-28 lg:h-90 lg:w-90 lg:blur-[100px]" />
+            sm:-right-28 sm:-top-28
+            sm:h-80 sm:w-80
+            sm:blur-[100px]
+
+            lg:-right-32 lg:-top-32
+            lg:h-96 lg:w-96
+            lg:blur-[120px]
+          "
+        />
 
         <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right,#e9efe9 1px,transparent 1px),linear-gradient(to bottom,#e9efe9 1px,transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
+          className="
+            absolute
+            -bottom-20 -left-20
+            h-52 w-52
+            rounded-full
+            bg-[#EEF9F1]
+            blur-[70px]
+
+            sm:-bottom-24 sm:-left-24
+            sm:h-64 sm:w-64
+            sm:blur-[90px]
+
+            lg:-bottom-32 lg:-left-32
+            lg:h-80 lg:w-80
+            lg:blur-[100px]
+          "
         />
       </div>
 
-      <div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl items-center px-5 pt-28 pb-16 sm:px-6 lg:pt-0 lg:pb-0">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.75,
+          ease: "easeOut",
+        }}
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-6xl
+          flex-col
+          items-center
+          px-5
+          pt-28
+          pb-16
+          text-center
+
+          sm:px-8
+            sm:pt-32
+            sm:pb-20
+
+            md:px-10
+            md:pt-36
+
+            lg:px-12
+            lg:pt-40
+            lg:pb-24
+        "
+      >
+        <h1
+          className="
+            max-w-full
+            wrap-break-word
+            text-[clamp(2.35rem,11vw,3.25rem)]
+            font-medium
+            leading-[1.08]
+            tracking-[-0.035em]
+            text-[#252525]
+
+            sm:text-6xl
+            sm:leading-[1.08]
+
+            md:text-[4rem]
+
+            lg:text-7xl
+            lg:leading-[1.05]
+          "
+        >
+          Hi, I&apos;m{" "}
+          <span className="text-[#4F8F5A]">Haiana Reznichenko</span>
+        </h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.12,
+            duration: 0.65,
+          }}
+          className="
+            mt-5
+            max-w-[90%]
+            text-xl
+            font-normal
+            leading-snug
+            text-[#59615B]
+
+            sm:mt-6
+            sm:text-2xl
+
+            md:text-3xl
+
+            lg:mt-7
+            lg:text-4xl
+          "
+        >
+          Full-Stack &amp; Frontend Developer
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.24,
+            duration: 0.65,
+          }}
+          className="
+            mt-5
+            max-w-136
+            text-[15px]
+            leading-6
+            text-neutral-600
+
+            sm:mt-7
+            sm:max-w-2xl
+            sm:text-base
+            sm:leading-7
+
+            md:text-lg
+            md:leading-8
+
+            lg:mt-8
+            lg:max-w-3xl
+          "
+        >
+          I build modern web applications using React, Next.js and TypeScript. I
+          enjoy learning new technologies, solving real-world problems and
+          delivering software from idea to deployment
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.36,
+            duration: 0.65,
+          }}
+          className="
+            mt-7
+            flex
+            w-full
+            max-w-sm
+            flex-col
+            gap-3
+
+            sm:mt-9
+            sm:w-auto
+            sm:max-w-none
+            sm:flex-row
+
+            lg:mt-10
+          "
+        >
+          <a
+            href="#projects"
+            className="
+              flex
+              w-full
+              items-center
+              justify-center
+              rounded-lg
+              bg-[#4F8F5A]
+              px-7
+              py-3.5
+              text-sm
+              font-medium
+              text-white
+              transition
+              duration-300
+
+              hover:-translate-y-0.5
+              hover:bg-[#42784C]
+              hover:shadow-lg
+
+              sm:w-auto
+              sm:min-w-40
+              sm:text-base
+            "
           >
-            <span className="hidden lg:inline-flex rounded-full border border-[#CFE7D5] bg-white px-4 py-2 text-sm font-medium text-[#4F8F5A] shadow-sm">
-              Frontend/Full-Stack Developer
-            </span>
+            View My Work
+          </a>
 
-            <h1 className="mt-0 text-4xl font-bold leading-tight tracking-tight text-[#252525] sm:text-5xl lg:mt-8 lg:text-7xl lg:leading-[1.05]">
-              Designing
-              <br />
-              beautiful web
-              <br />
-              experiences.
-            </h1>
+          <a
+            href="#contact"
+            className="
+              flex
+              w-full
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-[#D9E4DB]
+              bg-white
+              px-7
+              py-3.5
+              text-sm
+              font-medium
+              text-[#252525]
+              transition
+              duration-300
 
-            <p className="mx-auto mt-6 max-w-md text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8 lg:mx-0 lg:mt-8">
-              Hi, I&apos;m Haiana. I build modern React & Next.js applications
-              with clean interfaces, thoughtful UX and attention to detail.
-            </p>
+              hover:-translate-y-0.5
+              hover:border-[#4F8F5A]
+              hover:text-[#4F8F5A]
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start lg:mt-10">
-              <a
-                href="#projects"
-                className="flex items-center justify-center gap-2 rounded-full bg-[#4F8F5A] px-6 py-3 text-white transition hover:bg-[#42784c] hover:scale-[1.02]"
-              >
-                View Projects
-                <ArrowRight size={18} />
-              </a>
-
-              <a
-                href="/Haiana_Reznichenko_CV.pdf"
-                download
-                className="flex items-center justify-center gap-2 rounded-full border border-[#D9E4DB] bg-white px-6 py-3 transition hover:border-[#4F8F5A]"
-              >
-                Download CV
-                <Download size={18} />
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative mx-auto h-80 w-full max-w-[320px] sm:h-107.5 sm:max-w-107.5 lg:h-160 lg:max-w-none"
+              sm:w-auto
+              sm:min-w-40
+              sm:text-base
+            "
           >
-            <div className="absolute right-6 top-6 h-55 w-42.5 rounded-[36px] border border-white/70 bg-white/55 backdrop-blur-2xl shadow-[0_20px_60px_rgba(80,130,90,.12)] sm:right-8 sm:top-8 sm:h-80 sm:w-60 lg:right-12 lg:top-12 lg:h-110 lg:w-85 lg:rounded-[48px]" />
-            <div className="absolute left-2 top-36 h-28 w-36 rounded-3xl border border-white/70 bg-white/60 backdrop-blur-xl shadow-xl sm:left-6 sm:top-44 sm:h-36 sm:w-44 lg:left-8 lg:top-56 lg:h-44 lg:w-52" />
-            <div className="absolute bottom-10 right-0 h-24 w-32 rounded-3xl border border-white/70 bg-white/60 backdrop-blur-xl shadow-xl sm:bottom-14 sm:h-28 sm:w-36 lg:bottom-20 lg:h-36 lg:w-44" />
-            <div className="absolute left-10 top-2 h-58.75 w-46.25 rounded-[40px] border border-[#BFDCC6] sm:left-14 sm:top-4 sm:h-83.75 sm:w-66.25 lg:left-24 lg:top-8 lg:h-117.5 lg:w-92.5 lg:rounded-[56px]" />
-            <div className="absolute right-10 top-12 h-24 w-24 rounded-full bg-[#CBEBD2] blur-2xl sm:h-32 sm:w-32 lg:right-20 lg:top-24 lg:h-40 lg:w-40 lg:blur-3xl" />
-            <div className="absolute bottom-8 left-10 h-28 w-28 rounded-full bg-[#E5F7E9] blur-2xl sm:h-36 sm:w-36 lg:bottom-16 lg:left-24 lg:h-48 lg:w-48 lg:blur-3xl" />
-            <div className="absolute left-0 top-10 h-3 w-3 rounded-full bg-[#6CA678] lg:top-20 lg:h-4 lg:w-4" />
-            <div className="absolute right-4 top-0 h-2 w-2 rounded-full bg-[#88C394]" />
-            <div className="absolute bottom-0 left-24 h-2 w-2 rounded-full bg-[#6CA678] lg:left-44 lg:h-3 lg:w-3" />
-            <div className="absolute left-8 top-20 h-px w-16 bg-[#C8DDCC] sm:w-24 lg:left-14 lg:top-40 lg:w-32" />
-            <div className="absolute bottom-20 right-4 h-px w-16 bg-[#C8DDCC] sm:w-20 lg:right-10 lg:bottom-40 lg:w-24" />
-          </motion.div>
-        </div>
-      </div>
+            Get In Touch
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 0.52,
+            duration: 0.65,
+          }}
+          className="
+            mt-8
+            flex
+            items-center
+            justify-center
+            gap-7
+            text-[#68706A]
+
+            sm:mt-10
+
+            lg:mt-12
+          "
+        >
+          <a
+            href="https://github.com/lublubuterbrodi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="
+              transition
+              duration-300
+              hover:-translate-y-1
+              hover:text-[#4F8F5A]
+            "
+          >
+            <FaGithub className="h-5.5 w-5.5 sm:h-6 sm:w-6" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/haiana-reznichenko-0898633b4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="
+              transition
+              duration-300
+              hover:-translate-y-1
+              hover:text-[#4F8F5A]
+            "
+          >
+            <FaLinkedinIn className="h-5.5 w-5.5 sm:h-6 sm:w-6" />
+          </a>
+
+          <a
+            href="mailto:haianareznichenko@gmail.com"
+            aria-label="Email"
+            className="
+              transition
+              duration-300
+              hover:-translate-y-1
+              hover:text-[#4F8F5A]
+            "
+          >
+            <Mail className="h-6 w-6 sm:h-6.5 sm:w-6.5" strokeWidth={1.8} />
+          </a>
+        </motion.div>
+
+        <motion.a
+          href="#skills"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            y: [0, 6, 0],
+          }}
+          transition={{
+            opacity: {
+              delay: 0.7,
+              duration: 0.5,
+            },
+            y: {
+              delay: 1.2,
+              duration: 1.8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+          aria-label="Scroll to projects"
+          className="
+            mt-8
+            text-[#68706A]
+            transition
+            hover:text-[#4F8F5A]
+
+            sm:mt-10
+
+            lg:mt-12
+          "
+        >
+          <ArrowDown className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={1.7} />
+        </motion.a>
+      </motion.div>
     </section>
   );
 }
